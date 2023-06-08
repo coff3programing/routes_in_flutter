@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rutas_flutter/screens/login_screen.dart';
+import 'package:rutas_flutter/screens/menu_screen.dart';
 import 'package:rutas_flutter/screens/register_screen.dart';
 import 'package:rutas_flutter/widgets/customized_button.dart';
 
@@ -47,6 +48,17 @@ class WelcomeScreen extends StatelessWidget {
                 );
               },
             ),
+            CustomizedButton(
+              buttonText: "Menu",
+              buttonColor: Colors.black,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Menu()),
+                );
+              },
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -56,7 +68,10 @@ class WelcomeScreen extends StatelessWidget {
                 "Continue as a Guest",
                 style: TextStyle(color: Color(0xff35C2C1), fontSize: 25),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rutas_flutter/screens/register_screen.dart';
+import 'package:rutas_flutter/screens/welcome_screen.dart';
 import 'package:rutas_flutter/widgets/cutomized_textfield.dart';
+
+import '../widgets/customized_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -57,6 +61,31 @@ class _LoginScreenState extends State<LoginScreen> {
                 myController: _passwordController,
                 hintText: "Enter your Password",
                 isPassword: true,
+              ),
+              CustomizedButton(
+                buttonText: "Go to Register",
+                buttonColor: Colors.black,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RegisterScreen()
+                    ),
+                  );
+                },
+              ),
+              CustomizedButton(
+                buttonText: "Go to Home Page",
+                buttonColor: Colors.white,
+                textColor: Colors.black,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WelcomeScreen()),
+                  );
+                },
               ),
             ],
           ),
